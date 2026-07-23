@@ -10,20 +10,22 @@ import javax.swing.JOptionPane;
  *
  * @author USER
  */
-public class FrmActualizarEstudiante extends javax.swing.JFrame {
+public class FrmGuardarActualizarEstudiante extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FrmActualizarEstudiante.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FrmGuardarActualizarEstudiante.class.getName());
     Estudiante estudiante;
+    boolean actualizar = false;
     private EstudianteDAO estDao = new EstudianteDAO();
     /**
      * Creates new form FrmActualizarEstudiante
      */
-    public FrmActualizarEstudiante() {
+    public FrmGuardarActualizarEstudiante() {
         initComponents();
     }
     
-    public FrmActualizarEstudiante(Estudiante estudiante) {
+    public FrmGuardarActualizarEstudiante(Estudiante estudiante, boolean actualizar) {
         this.estudiante = estudiante;
+        this.actualizar = actualizar;
         initComponents();
         cargarDatos();
     }
@@ -152,7 +154,8 @@ public class FrmActualizarEstudiante extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
-        // TODO add your handling code here:       
+       
+       if (actualizar){
        estudiante.setNombre(txtNombre.getText());
        estudiante.setCorreo(txtCorreo.getText());
        estudiante.setPromedio(Double.parseDouble(txtPromedio.getText()));
@@ -162,6 +165,20 @@ public class FrmActualizarEstudiante extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Se ha Actualizado Correctamente");
                 this.dispose();
       }
+      }else{
+       
+        Estudiante est = new Estudiante(txtNombre.getText(),txtCorreo.getText(), Double.parseDouble(txtPromedio.getText())    );
+        int cantidadGuardado = estDao.insertar(est);
+        
+        if (cantidadGuardado>0){
+        
+          JOptionPane.showMessageDialog(null, "Se ha guardado Correctamente");
+                this.dispose();
+        }
+       }
+      
+      
+      
     }//GEN-LAST:event_btnAceptarActionPerformed
 
     /**
@@ -186,7 +203,7 @@ public class FrmActualizarEstudiante extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new FrmActualizarEstudiante().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new FrmGuardarActualizarEstudiante().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
