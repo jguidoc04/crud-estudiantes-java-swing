@@ -66,4 +66,49 @@ public class EstudianteDAO {
  }
     
     
+    public boolean eliminar(int id) {
+    String sql = "DELETE FROM estudiantes WHERE id = ?";
+ 
+    try (Connection conexion = ConexionBD.obtenerConexion();
+         PreparedStatement ps = conexion.prepareStatement(sql)) {
+ 
+        ps.setInt(1, id);
+ 
+        int filasAfectadas = ps.executeUpdate();
+        if (filasAfectadas > 0) {
+            System.out.println("Estudiante eliminado correctamente.");
+        } else {
+            System.out.println("No existe un estudiante con ese id.");
+        }
+        return filasAfectadas > 0;
+ 
+    } catch (SQLException e) {
+        System.err.println("Error al eliminar estudiante: " + e.getMessage());
+        return false;
+    }
+    
+    
+}
+    
+    public boolean actualizar(Estudiante estudiante) {
+    String sql = "UPDATE estudiantes SET nombre = ?, correo = ?, promedio = ? WHERE id = ?";
+ 
+    try (Connection conexion = ConexionBD.obtenerConexion();
+         PreparedStatement ps = conexion.prepareStatement(sql)) {
+ 
+        ps.setString(1, estudiante.getNombre());
+        ps.setString(2, estudiante.getCorreo());
+        ps.setDouble(3, estudiante.getPromedio());
+        ps.setInt(4, estudiante.getId());
+ 
+        int filasAfectadas = ps.executeUpdate();
+        return filasAfectadas > 0; // true si realmente existía y se modificó
+ 
+    } catch (SQLException e) {
+        System.err.println("Error al actualizar estudiante: " + e.getMessage());
+        return false;
+    }
+}
+    
+    
 }
