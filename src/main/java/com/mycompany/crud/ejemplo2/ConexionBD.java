@@ -7,16 +7,20 @@ package com.mycompany.crud.ejemplo2;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import io.github.cdimascio.dotenv.Dotenv;
 
 /**
  *
  * @author USER
  */
 public class ConexionBD {
- 
-    private static final String URL = "jdbc:postgresql://localhost:5432/crud";
-    private static final String USUARIO = "postgres";
-    private static final String CLAVE = "12345";
+            
+    private static final Dotenv dotenv = Dotenv.load();
+    private static final String URL = dotenv.get("DB_URL");
+    private static final String USUARIO = dotenv.get("DB_USER");
+    private static final String CLAVE = dotenv.get("DB_PASSWORD");
+    
+   
  
     public static Connection obtenerConexion() throws SQLException {
         return DriverManager.getConnection(URL, USUARIO, CLAVE);
