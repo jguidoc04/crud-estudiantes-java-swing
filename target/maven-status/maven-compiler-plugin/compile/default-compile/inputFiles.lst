@@ -1,6 +1,9 @@
-C:\Users\USER\Documents\NetBeansProjects\crud-ejemplo2\src\main\java\com\mycompany\crud\ejemplo2\ConexionBD.java
 C:\Users\USER\Documents\NetBeansProjects\crud-ejemplo2\src\main\java\com\mycompany\crud\ejemplo2\CrudEjemplo2.java
-C:\Users\USER\Documents\NetBeansProjects\crud-ejemplo2\src\main\java\com\mycompany\crud\ejemplo2\Estudiante.java
-C:\Users\USER\Documents\NetBeansProjects\crud-ejemplo2\src\main\java\com\mycompany\crud\ejemplo2\EstudianteDAO.java
-C:\Users\USER\Documents\NetBeansProjects\crud-ejemplo2\src\main\java\com\mycompany\crud\ejemplo2\FrmEstudiante.java
-C:\Users\USER\Documents\NetBeansProjects\crud-ejemplo2\src\main\java\com\mycompany\crud\ejemplo2\FrmGuardarActualizarEstudiante.java
+C:\Users\USER\Documents\NetBeansProjects\crud-ejemplo2\src\main\java\conexion\ConexionBD.java
+C:\Users\USER\Documents\NetBeansProjects\crud-ejemplo2\src\main\java\dao\EstudianteDAO.java
+C:\Users\USER\Documents\NetBeansProjects\crud-ejemplo2\src\main\java\dao\UsuarioDAO.java
+C:\Users\USER\Documents\NetBeansProjects\crud-ejemplo2\src\main\java\modelo\Estudiante.java
+C:\Users\USER\Documents\NetBeansProjects\crud-ejemplo2\src\main\java\modelo\Usuario.java
+C:\Users\USER\Documents\NetBeansProjects\crud-ejemplo2\src\main\java\vista\FrmEstudiante.java
+C:\Users\USER\Documents\NetBeansProjects\crud-ejemplo2\src\main\java\vista\FrmGuardarActualizarEstudiante.java
+C:\Users\USER\Documents\NetBeansProjects\crud-ejemplo2\src\main\java\vista\FrmLogin.java
