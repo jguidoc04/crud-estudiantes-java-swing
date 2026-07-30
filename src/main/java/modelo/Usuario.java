@@ -10,17 +10,44 @@ package modelo;
  */
 public class Usuario {
     
-    private String username;
+    private int id;
+    private String nombre;
+    private String usuario;
     private String password;
-    
-    
 
-    public String getUsername() {
-        return username;
+    public Usuario() {
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public Usuario(int id, String nombre, String usuario, String password) {
+        this.id = id;
+        this.nombre = nombre;
+        this.usuario = usuario;
+        this.password = password;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String username) {
+        this.usuario = username;
     }
 
     public String getPassword() {
