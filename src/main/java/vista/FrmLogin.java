@@ -145,6 +145,10 @@ public class FrmLogin extends javax.swing.JFrame {
      
      if(usuarioLogueado != null){
        JOptionPane.showMessageDialog(this,"Bienvenido al sistema!");
+        this.dispose();
+        FrmHome home = new FrmHome(usuarioLogueado);
+        home.setLocationRelativeTo(null);
+        home.setVisible(true);
      }else{
         JOptionPane.showMessageDialog(this,"Usuario o contraseña incorrectos");
      }

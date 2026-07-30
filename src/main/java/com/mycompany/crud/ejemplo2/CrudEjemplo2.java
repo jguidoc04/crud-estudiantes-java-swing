@@ -18,8 +18,6 @@ public class CrudEjemplo2 {
        FrmLogin login = new FrmLogin();
        login.setLocationRelativeTo(null);
         login.setVisible(true);
-       
-       
-        
+
     }
 }
